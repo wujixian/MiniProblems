@@ -1,0 +1,7 @@
+<!--pages/Liu/Liu.wxml-->
+  <text class="test">pages/Liu/Liu.wxml \n</text>
+  <text class="title">hello world! liu \n</text>
+  <view>
+    <image src="screenshot.png" ></image>
+  </view>
+  <button class="button" size="default">button \n</button>

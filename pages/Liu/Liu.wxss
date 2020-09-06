@@ -1,0 +1,13 @@
+/* pages/Liu/Liu.wxss */
+.title {
+  color: red;
+  font-size: 30px;
+}
+.button {
+color: blue;
+font-size: 20px;
+}
+.test {
+  color: green;
+  font-size: larger;
+}
