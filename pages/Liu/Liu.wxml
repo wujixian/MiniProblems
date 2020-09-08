@@ -5,3 +5,5 @@
     <image src="screenshot.png" ></image>
   </view>
   <button class="button" size="default">button \n</button>
+
+  <text>show hands</text>
