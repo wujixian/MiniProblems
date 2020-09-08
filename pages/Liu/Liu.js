@@ -1,11 +1,36 @@
 // pages/Liu/Liu.js
 Page({
 
+
   /**
    * 页面的初始数据
    */
   data: {
+    name: 'CoderWhy',
+    age: 29,
+    students: [
+      {id: 1, name: 'kobe', age: 18},
+      {id: 2, name: 'janms', age: 20},
+      {id: 3, name: 'yao', age: 21},
+      {id: 4, name: 'yi', age: 28}
+    ],
+    counter: 0
+  },
 
+  handleBtnClinkAdd(){
+    console.log('button tap down')
+    // 1. 错误方法  不会真正改变
+    // this.data.counter += 1
+    // console.log(this.data.counter)
+    // 2. this.setdata()
+    this.setData({
+      counter: this.data.counter + 1
+    })
+  },
+  handleBtnClinkSub(){
+    this.setData({
+      counter: this.data.counter - 1
+    })
   },
 
   /**

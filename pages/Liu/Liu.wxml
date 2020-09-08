@@ -5,3 +5,15 @@
     <image src="screenshot.png" ></image>
   </view>
   <button class="button" size="default">button \n</button>
+  <!--1.小程序的数据绑定 use {{}}  mustache syntax-->
+  <view>hello {{name}}</view>
+  <view>我的年龄：{{age}}</view>
+  <view>我的年龄：{{age + 10}}</view>
+  <!--2. 小程序list演示-->
+  <view>{{students[0].name}},{{students[0].age}}</view>
+  <view wx:for="students">{{item}}</view>
+  <view wx:for="{{students}}">{{item.name}}, {{item.age}}</view>
+   <!--3. 事件监听 改变data 点击button 改变counter数值-->
+   <view>当前计数： {{counter}}</view>
+  <button size="mini" bindtap="handleBtnClinkAdd">+</button>
+  <button size="mini" bindtap="handleBtnClinkSub">-</button>
