@@ -2,13 +2,33 @@
   "pages": [
     "pages/Liu/Liu",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/test/tes"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff5777",
+    "navigationBarTitleText": "脱单网",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true
+
+  },
+  "tabBar": {
+    "selectedColor": "#ff5777",
+    "list": [{
+        "pagePath": "pages/Liu/Liu",
+        "text": "首页",
+        "iconPath": "asset/home.png",
+        "selectedIconPath": "asset/home_selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "测试",
+        "iconPath": "asset/category.png",
+        "selectedIconPath": "asset/category_selected.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
