@@ -11,7 +11,7 @@
     "navigationBarTitleText": "脱单网",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#eeeeee",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
 
   },
   "tabBar": {

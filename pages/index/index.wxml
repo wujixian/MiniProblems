@@ -11,3 +11,16 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
+
+
+<!--button 的相关属性-->
+<button>按钮</button>
+<button size="mini">按钮</button>
+<button size="mini" type="primary">按钮</button>
+<button size="mini" type="default">按钮</button>
+<button size="mini" type="warn">按钮</button>
+<button size="mini" plain>按钮</button>
+<button size="mini" disabled>按钮</button>
+<button size="mini" loading="{{isloading}}">按钮</button>
+<button hover-class="pressed">按钮</button>
+<!-- 注释快捷键  shift option a-->

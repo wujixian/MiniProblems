@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "妹子图",
+  "navigationBarBackgroundColor": "#ff0000",
+  "enablePullDownRefresh": true
 }

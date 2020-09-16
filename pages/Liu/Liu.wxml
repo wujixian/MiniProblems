@@ -1,12 +1,28 @@
 <!--pages/Liu/Liu.wxml-->
-  <text class="test">pages/Liu/Liu.wxml \n</text>
-  <text class="title">hello world! liu \n</text>
+<!--生效，需要用mustache语法，下面时text的选中的两种方式,text默认空格时nbsp-->
+  <text class="test" selectable="{{true}}" space="nbsp">pages/Liu/Liu.wxml \n</text>
+  <text class="title" selectable space="ensp">hello world! liu \n</text>
+  <text selectable space="emsp">hello world\n</text>
+  <text space="ensp">hello world\n</text>
+  <text>5 &gt; 3\n</text>
+  <text decode="{{true}}">5 &gt; 3\n</text>
+  <text decode>5 &gt; 3\n</text>
+  <!--获取用户信息的方式-->
+  <button size="mini" 
+          open-type="getUserInfo" 
+          bindgetuserinfo="handGetUserInfo">
+      获取授权
+  </button>
+  <!--获取用户信息的方法-->
+  <OPen-data type="userNickName"></OPen-data>
+  <open-data type="userNickname"></open-data>
+  <OPen-data type="userAvatarUrl"></OPen-data>
   <view>
     <image src="screenshot.png" ></image>
   </view>
   <button class="button" size="default">button \n</button>
   <!--1.小程序的数据绑定 use {{}}  mustache syntax-->
-  <view>hello {{name}}</view>
+  <view bindtap="handleViewClick">hello {{name}}</view>
   <view>我的年龄：{{age}}</view>
   <view>我的年龄：{{age + 10}}</view>
   <!--2. 小程序list演示-->
@@ -17,3 +33,4 @@
    <view>当前计数： {{counter}}</view>
   <button size="mini" bindtap="handleBtnClinkAdd">+</button>
   <button size="mini" bindtap="handleBtnClinkSub">-</button>
+  <view wx:for="{{list}}">{{list}}</view>
