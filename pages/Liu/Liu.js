@@ -1,5 +1,5 @@
 // pages/Liu/Liu.js
-
+// 获取app js文件的全局变量
 const app = getApp()
 // console.log(app.globData.name)
 // console.log(app.globData.age)
@@ -31,17 +31,19 @@ Page({
   },
   // 3. 监听xml中的事件 
   handleBtnClinkAdd(){
-    console.log('button tap down')
+    console.log('+ button tap down')
     // 1. 错误方法  不会真正改变
     // this.data.counter += 1
     // console.log(this.data.counter)
     // 2. this.setdata()
+    // 处理本页面定义的变量数据
     this.setData({
       counter: this.data.counter + 1,
       name: "hero Liu"
     })
   },
   handleBtnClinkSub(){
+    console.log('- button tap down')
     this.setData({
       counter: this.data.counter - 1
     })
@@ -69,13 +71,28 @@ Page({
   // onLoad(){}  ES6的增强写法 同下。
   onLoad: function (options) {
     console.log('onLoad')
+    // const _this = this; 配合下面第一种方法使用
     // onLoad 时  获取 request数据 赋值给data数据
     wx.request({
       // 需要在微信控制台 配置链接，或者在详细勾选不校验合法域名选项
       url: 'http://123.207.32.32:8000/recommend',
       // 通过回调的方式拿数据，就是下面三种方式
       // success: function(){}  //1.常规
+      // 此种方法的this 不是只想改page的，所以 使用下面的方法 无法更改该页面的list
+      // success: function(res) {
+      //   console.log(res)
+      //   const data = res.data.data
+      //   console.log(_this)  // 可以打印查看this 是谁 前端开发时 this会指向windows，而小程序开发 this指向undefined  所以undefined.setData()无法展示数据,需要在上面加上
+      //   // const _this = this;定义一下，才能使用_this来set函数
+      //   _this.setData({
+      //     list: data
+      //   })
+        
+      // },
       // success(){}  //2. ES6增强写法
+
+      //3.箭头函数
+      // 箭头函数的this不确定是谁，他是一层层向上查找的，下面使用是正确的，this是当前页面的this
       success: (res) => {
         console.log(res)
         const data = res.data.data
@@ -83,7 +100,7 @@ Page({
         this.setData({
           list: data
         })
-      }   //3.箭头函数
+      }   
     })
 
   },

@@ -1,0 +1,20 @@
+<!--1. input的基本使用-->
+<input type="text" class="input" />
+
+<!--2. value: input中的默认值-->
+<input type="text" value="hahha" />
+
+<!--3. type: 决定键盘类型（文本/数字/身份证/digit）-->
+<input type="number" />
+<input type="idcard" />
+
+<!--4. password 明/暗文-->
+<input password />
+
+<!--5. place-holder 占位文字-->
+<input  placeholder="请输入文字..." />
+
+<!--6. input绑定事件-->
+<input bindinput="handleInput" 
+       bindfocus="handleFocus"
+       bindblur="handleBlur" />

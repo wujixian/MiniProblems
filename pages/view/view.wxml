@@ -1,0 +1,34 @@
+<!--pages/view/view.wxml-->
+
+<!--1. view的基本使用-->
+<view class="box">hahaha</view>
+<view>hehehe</view>
+
+<!--2. hover-class 当用户按下时的样式-->
+<view class="box1" 
+      hover-class="hover-view"
+      hover-start-time="{{0}}"  
+      hover-stay-time="0" >
+    box1
+</view>
+
+<!--3. hover-stop-propagation阻止祖先组件的点击态，反映在子组件里（只反应在父组件）-->
+<view class="box2" hover-class="hover-box2">
+  <view class="box1" 
+      hover-class="hover-view"
+      hover-start-time="{{0}}"  
+      hover-stay-time="0" 
+      hover-stop-propagation="{{true}}">
+    box1
+</view>
+</view>
+
+<view class="box2" hover-class="hover-box2">
+  <view class="box1" 
+      hover-class="hover-view"
+      hover-start-time="{{0}}"  
+      hover-stay-time="0" 
+      hover-stop-propagation>
+    box1
+</view>
+</view>

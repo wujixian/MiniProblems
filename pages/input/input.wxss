@@ -1,0 +1,12 @@
+/* pages/input/input.wxss */
+/*input类的修饰*/
+.input{
+  border: 1px solid red;
+  margin: 10px 10px;
+}
+
+/*input标签的修饰*/
+input{
+  border: 1px solid blue;
+  margin: 10px 10px;
+}

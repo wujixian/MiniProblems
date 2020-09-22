@@ -1,0 +1,19 @@
+<!--pages/scroll/scroll.wxml-->
+<!-- scrool-view主要实现的是局部滚动，整体滚动默认实现，这个是一个局部区域上下左右滚动 -->
+
+<!-- 1. 水平滚动 scroll-x-->
+<scroll-view  class="container1" scroll-x>
+  <view wx:for="{{10}}" class="item1">{{item}}</view>
+</scroll-view>
+
+<!-- 2. 垂直滚动 scroll-y-->
+<scroll-view class="container2" scroll-y>
+   <view wx:for="{{10}}" class="item2">{{item}}</view>
+</scroll-view>
+
+<!-- 3. 其他补充 事件监听补充-->
+<scroll-view class="container2" 
+             scroll-y
+             bindscroll="handleScroll">
+   <view wx:for="{{10}}" class="item2">{{item}}</view>
+</scroll-view>

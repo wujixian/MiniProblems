@@ -1,0 +1,34 @@
+<!--1. image的基础用法-->
+<!--
+  重点：
+    1. image可以写成单标签，也可以写成双标签<image></image> or <image/> 记得slash
+    2. image默认大小为320 * 240
+    3. image是一个行内块元素
+-->
+<!-- <image/> -->
+
+<!--2. src: 本地路径（相对/绝对）/远程路径-->
+<!--相对路径： 从当前页面去找image的目录-->
+  <image src="../../asset/category.png" class="image"/>
+  <image src="/asset/category.png" class="image"/>
+  <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image"/>
+
+  <!--补充：相册中的图片-->
+  <button bindtap="handChooseAlbum">选择图片</button>
+  <image src="{{imagePath}}" lazy-load mode="widthFix"></image>
+
+  <!--3. bindload监听图片加载完成-->
+  <image bindload="handleImageLoad" 
+         src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></image>
+
+<view>----------------------------------------</view>
+<image bindload="handleImageLoad" 
+       src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"
+       wx:for="{{1}}"
+       lazy-load />
+
+<!--4. show-menu-by-longpress: 长按图片出现识别小程序码-->
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" show-menu-by-longpress />
+
+<!--5. mode: 有很多值可以试，网络图片一般选择widthFix-->
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jp" mode="aspectFill"></image>

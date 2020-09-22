@@ -21,7 +21,7 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
+    "useMultiFrameRuntime": false,
     "useApiHook": false,
     "babelSetting": {
       "ignore": [],
@@ -70,9 +70,9 @@
       "current": -1,
       "list": [
         {
-          "id": -1,
-          "name": "pages/Liu/Liu",
-          "pathName": "pages/Liu/Liu",
+          "id": 0,
+          "name": "pages/view/view",
+          "pathName": "pages/view/view",
           "query": "",
           "scene": null
         },
@@ -80,6 +80,28 @@
           "id": -1,
           "name": "pages/index/index",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/image/image",
+          "pathName": "pages/image/image",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/input/input",
+          "pathName": "pages/input/input",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/scroll/scroll",
+          "pathName": "pages/scroll/scroll",
+          "query": "",
           "scene": null
         }
       ]

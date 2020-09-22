@@ -13,10 +13,17 @@
           bindgetuserinfo="handGetUserInfo">
       获取授权
   </button>
+  <button size="mini" 
+          open-type="getPhoneNumber" 
+          bindgetphonenumber="onGetPhoneNuber">
+      获取电话
+    </button>
+
   <!--获取用户信息的方法-->
   <OPen-data type="userNickName"></OPen-data>
   <open-data type="userNickname"></open-data>
   <OPen-data type="userAvatarUrl"></OPen-data>
+  <open-data type="getPhoneNumber"></open-data>
   <view>
     <image src="screenshot.png" ></image>
   </view>
