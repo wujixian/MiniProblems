@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/wxss/wxss",
     "pages/Liu/Liu",
     "pages/index/index",
     "pages/logs/logs",

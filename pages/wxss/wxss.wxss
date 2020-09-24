@@ -1,0 +1,5 @@
+/* pages/wxss/wxss.wxss */
+/*导入样式*/
+@import "./style/box.wxss";
+@import "./style/content.wxss";
+@import "./style/weui-searchbar.wxss"
