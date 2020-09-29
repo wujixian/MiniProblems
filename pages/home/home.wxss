@@ -1,0 +1,41 @@
+/* pages/home/home.wxss */
+
+.box{
+  width: 300rpx;
+  height: 300rpx;
+  background: orange;
+}
+.outter{
+  width: 300rpx;
+  height: 300rpx;
+  background: orchid;
+}
+.inner{
+  width: 100rpx;
+  height: 100rpx;
+  background: purple;
+}
+.container1{
+  display: flex;
+}
+.item{
+  flex: 1;
+  text-align: center;
+}
+
+
+.view1{
+  width: 600rpx;
+  height: 600rpx;
+  background: red;
+}
+.view2{
+  width: 400rpx;
+  height: 400rpx;
+  background: green;
+}
+.view3{
+  width: 200rpx;
+  height: 200rpx;
+  background: yellow;
+}

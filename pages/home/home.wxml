@@ -1,0 +1,55 @@
+
+<!-- 1. 事件处理的回顾 -->
+<button size="mini" bindtap="handleBtnClick">按钮</button>
+<button size="mini" bind:tap="handleBtnClick">按钮</button>
+<button size="mini" catch:tap="handleBtnClick">按钮</button>
+
+<!-- 2. 常见事件 -->
+<view class="box" 
+      bind:touchstart="handleTouchStart"
+      bind:touchmove="handleTouchMove"
+      bind:longpress="handleLongPress"
+      bind:touchend="handleTouchEnd"
+      bind:tap="handleTap"
+      bind:touchcancel="handleTouchCancel="></view>
+
+<!-- 3. 事件对象分析 -->
+<!-- 验证touches和changedTouches的区别，changedTouches强调手指变换，touches强调手指按压 一组数组说明一个手指，没有数组就没有手指（在end时间里能看出区别）-->
+<button size="mini" bindtap="hadleEventClick" bindtouchend="handleEventEnd">事件对象</button>
+
+
+<!-- 验证target和currentTarget的区别， 区别按压目标，和上一次按压的目标（）-->
+<view id='outter' class="outter" bind:tap="handleOutter">
+  外部
+  <view id='inner' class="inner" bind:tap="handleInner">内部</view>
+</view>
+
+<!-- 4. 事件的传递参数 -->
+<!-- flex 布局，文字全部放在了一行 -->
+<view class="container1">
+  <block wx:for="{{titles}}" wx:key="index">
+    <view class="item" 
+          bind:tap="handleItemClick"
+          data-index="{{index}}"
+          data-item="{{item}}"> 
+      {{item}}
+    </view>
+  </block>
+</view>
+
+<!-- 5. 事件捕获，事件冒泡 bind和catch的区别-->
+<!-- 
+  ps:
+    捕获事件必须写成capture-bind:tap而不能时capture-bindtap
+    从外向里捕获事件， 从里向外冒泡事件
+    使用bind 就会一层层的传递事件
+    使用catch 会阻止事件的进一步传递
+
+-->
+<view class="view1" capture-bind:tap="hadleCaptureView1" bindtap="handleBindView1">
+  <view class="view2" capture-catch:tap="hadleCaptureView2" catchtap="handleBindView2">
+    <view class="view3" capture-bind:tap="hadleCaptureView3" bindtap="handleBindView3">
+
+    </view>
+  </view>
+</view>
