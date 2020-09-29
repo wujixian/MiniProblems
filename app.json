@@ -1,10 +1,18 @@
 {
   "pages": [
+    "pages/wxs/wxs",
+    "pages/map/map",
+    "pages/wxml/wxml",
     "pages/Liu/Liu",
     "pages/index/index",
     "pages/logs/logs",
     "pages/src"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

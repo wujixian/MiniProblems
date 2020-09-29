@@ -1,0 +1,133 @@
+<include src='/wxml/header.wxml' />
+<!-- 1. wxml的样式 语法敏感-->
+
+<!-- <view>nihao</view>
+<image src="../src/screenshot.png" />
+<input class="input" type="text" />
+<view class="" Class=""></view> -->
+
+<!-- 2. mustache -->
+<!-- 2.1 普通用法 -->
+<!-- <view>{{message}}</view>
+<view>{{firstname}} {{lastname}}</view>
+<view>{{firstname + " " + lastname}}</view>
+<view>{{age >= 18 ? '成年人':'青少年'}}</view> -->
+
+<!-- 2.2 定时器实现时间刷新 -->
+<!-- <view class="time">{{nowTime}}</view> -->
+
+<!-- 2.3 绑定组件属性 -->
+<!-- <button size="mini" bindtap="handleSwitchColor">改变颜色</button>
+<view class='box {{isActive ? "active": ""}}'>哈哈哈</view>
+<view class='{{isActive ? "active": "box"}}'>heiheihei</view> -->
+
+<!-- 附录 -->
+<!-- <button bindtap="changeMapStyle" size="mini" hover-start-time>更改地图样式</button>
+<view class="map_box">
+  <map id="navi_map"
+      longitude='120.733428' 
+      latitude="31.254687" 
+      enable-3D
+      show-scale 
+      enable-satellite='{{mapFlag? true : false}}'
+      show-compass="false"></map>
+</view> -->
+
+<!-- wx:if的使用 -->
+<!-- <button size="mini" bindtap="handleSwithShow">改变显示</button>
+<view wx:if="{{isShow}}">hahahah</view> -->
+
+<!-- wx:else/wx:elif的使用 -->
+<!-- <button size="mini" bindtap="handleIncrement">分数增加</button>
+<view wx:if="{{score >= 90}}">{{score}} 优秀</view>
+<view wx:elif='{{score >= 80}}'>{{score}} 良好</view>
+<view wx:elif='{{score >=60}}'>{{score}} 及格</view>
+<view wx:else>{{score}} 不及格</view> -->
+
+<!-- hidden 属性展示 -->
+<!-- <view wx:if="{{false}}">jajajajja</view> -->
+
+<!--the different between hidden and wx:if  -->
+<!-- 
+  区别
+    当点击调试器中的Wxml观察时，可以发现hidden的view 因为只是把组件的display属性改成none（css里但display属性），但组件依然存在。 而wx:if隐藏时，是根本不存在改组件（根本没创建）
+  
+  选择
+    如果隐藏和显示切换频率很高时 选择hidden
+    如果隐藏和显示切换频率很低时 选择wx:if
+
+-->
+<!-- <view hidden="{{true}}"> 我通过hidden属性控制隐藏</view>
+<view wx:if="{{false}}">我通过wx: if属性控制隐藏</view> -->
+
+<!-- wx:for 列表渲染 -->
+<!-- 1. wx: for 基本使用 -->
+<!-- 1.1 遍历数组/字符串/数字 -->
+<!-- <view wx:for="{{['abc', 'dff', 'nba']}}">{{index}}: {{item}}</view> -->
+<!-- <view wx:for="hero">{{index}}: {{item}} </view>
+<view wx:for="{{9}}">{{index}}: {{item}}</view> -->
+
+<!-- 1.2 block标签 -->
+<!-- block 包装元素 块标签（包裹view等这种组件） 用于包裹一些组合但组件 不是组件是标签，用于接受多组件控制，不接受显示-->
+<!-- <block wx:if="{{true}}">
+  <button>ddd</button>
+  <view>hhhh</view>
+  <text>gggg</text>
+  <input type="text" placeholder="请输入内容" />
+</block> -->
+
+<!-- 1.3 item、index起别名 -->
+<view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="i">{{i}} {{movie}}</view>
+<!-- 当多重数组展示当时候就需要用到for 起别名     多重数组显示 -->
+<block wx:for="{{nums}}" wx:for-item="num">
+  <view wx:for="{{num}}"> {{item}}</view>
+</block>
+
+<!-- 1.4 wx: key的使用 -->
+<view wx:for="{{letters}}" wx:key="index">{{item}}</view>
+
+<!-- 
+    1.5 template使用 
+    
+    当前使用template已经很少了，之前用得多 因为之前小程序不支持自定义组件，为了代码复用：template。现在提供了很多组件 所以用的就少了
+
+-->
+<!-- 模版包裹的内容，在没有被调用前，是不会进行渲染的 定义时用双标签，用的时候用单标签，因为定义的时候，需要填充组件-->
+<template name="contentTemplate">
+  <button>按钮</button>
+  <view>哈哈</view>
+</template>
+
+<template name="contentItem">
+  <button>{{btnText}}</button>  
+  <view>{{content}}</view>
+</template>
+
+<template is="contentItem" data="{{btnText:'666', content: 'hahah'}}" /> 
+<template is="contentItem" data="{{btnText:'777', content: 'hhhh'}}" /> 
+<template is="contentItem" data="{{btnText:'888', content: 'sss'}}" /> 
+
+
+<!-- wxml  
+    import中不能递归引入（也就是A引入了B的template，不会引入B中引入C的template）
+    include 可以将目标文件中除了 <template/> <wxs/> 外的整个代码引入，相当于是拷贝到 
+    include 可以循环导入的  套娃
+
+
+    import导入
+      1.主要导入template（template 能够动态传输数据）
+      2.不能递归导入
+    include引入
+      1.将公共的wxml中的组件抽到一个文件中
+      2.特点：不能引入<template/> <wxs/> ，可以进行递归
+
+-->
+<!-- <include src="/wxml/template.wxml" /> -->
+<!-- <template id="abc" /> -->
+<import src="/wxml/template.wxml" />
+<block wx:for="{{[1,2,3,4,5,6,7]}}" wx:key='index'>
+  <template is="{{ item % 2 ==0 ? 'even' : 'odd'}}" data="{{num: item}}" />
+
+
+</block>
+<include src="/wxml/footet.wxml" />

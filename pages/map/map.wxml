@@ -1,0 +1,11 @@
+<!-- 附录 -->
+<button bindtap="changeMapStyle" size="mini" hover-start-time>更改地图样式</button>
+<view class="map_box">
+  <map id="navi_map"
+      longitude='120.733428' 
+      latitude="31.254687" 
+      enable-3D
+      show-scale 
+      enable-satellite='{{mapFlag? true : false}}'
+      show-compass="false"></map>
+</view>

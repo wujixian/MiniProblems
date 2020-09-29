@@ -1,0 +1,5 @@
+<include src="/wxml/nav.wxml" />
+<view>
+  <view>导航</view>
+
+</view>

@@ -1,0 +1,63 @@
+<!-- 
+  ◼ WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。
+     官方：WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。（不过基本一致）
+
+◼ 为什么要设计WXS语言呢？
+     在WXML中是不能直接调用Page/Component中定义的函数的. 
+     但是某些情况, 我们可以希望使用函数来处理WXML中的数据(类似于Vue中的过滤器)，这个时候就使用WXS了 
+
+◼ WXS使用的限制和特点：
+     WXS 的运行环境和其他 JavaScript 代码是隔离的，WXS 中不能调用其他 JavaScript 文件中定 义的函数，也不能调用小程序提供的API。 
+     WXS 函数不能作为组件的事件回调。
+     由于运行环境的差异，在 iOS 设备上小程序内的 WXS 会比 JavaScript 代码快 2 ~ 20 倍。在 android 设备上二者运行效率无差异。 
+-->
+
+
+<!-- wxs 类似js，全称：weixin script 由于wxml文件无法直接使用page js里的函数（只是可以通过绑定控件事件来绑定函数bindtap=''），所以诞生了wxs-->
+
+
+<!-- 1.错误的写法 -->
+<!-- <view>{{23.44545.toFixed(2)}}</view>
+<view>23.4455</view> -->
+<view>hahaha</view>
+<!-- 2. wxs定义方式 -->
+<!-- 2.1 直接定义在wxml里的方式定义wxs -->
+<!-- <wxs module="info">
+  // js code (目前支持es5 语法 暂不支持es6语法（const let 用不了）)
+
+  // define variable
+  var message = "Hello world";
+  var name = "Hero Liu";
+
+  // define function
+  var sum = function(num1, num2){
+    return num1 + num2
+  };
+
+  function add(num1, num2){
+    return num1 + num2
+  }
+  // wxs定义的内容不能在外部直接使用，因为系统认为该部分时私有化的，所以需要导出模块
+
+  //commonjs模块化导出写法
+  module.exports = {
+    message: message,
+    name: name,
+    sum: sum,
+    add: add,
+  }
+</wxs> -->
+
+
+<!-- 2.2 定义在wxs文件里的wxs方式，使用wxs标签进行导入 -->
+<!-- 此处导入不能使用绝对路径，只能使用相对路径 -->
+<wxs src="../../wxs/info.wxs" module="info" ></wxs>
+
+<view>{{info.message + info.name}}</view>
+<view>{{info.sum(23, 30)}}</view>
+<view>{{info.add(23, 30)}}</view>
+
+
+<!-- 3. wxs 的应用 -->
+<view>{{info.priceFormat("23.4444445", 3)}}</view>
+<view>{{info.dateFormat(1601371159, "yyyy-MM-dd hh:mm:ss")}}</view>

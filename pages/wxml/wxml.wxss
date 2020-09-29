@@ -1,0 +1,27 @@
+/* pages/wxml/wxml.wxss */
+.input{
+  margin: auto;
+  border: red;
+}
+.time{
+  font-size: 32px;
+  color: red;
+}
+.box{
+  font-size: 64rpx;
+}
+.active{
+  /* font-size: 64rpx; */
+  color: red;
+}
+#navi_map{
+  width: 100%;
+  height: 100;
+}
+#map_box{
+  position:absolute;
+  top: calc(35px + 80rpx);
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
