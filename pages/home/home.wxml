@@ -1,0 +1,79 @@
+<!-- 1.自定义组件的基本使用 -->
+<my-cpn></my-cpn>
+<my-cpn></my-cpn>
+<my-cpn />
+
+<!-- 2. 自定义组件的样式细节 
+        自定义组件内不建议使用id选择器，使用class选择器，且自定义组件的class与home页面的class互不影响
+        在自定义组件中的js文件中  Component对象中，可以传入一个options属性，其中options属性中有一个styleIsolation（隔离）属性 三个值： isolated（隔离）  apply-shared（wxss影响自定义组件，自定义组件不能影响wxss）  shared（相互影响）来控制页内样式与 自定义组件样式，是否相互影响
+-->
+<view class="title">nihao</view>
+<my-style class="title"/>
+
+<view>---------------------</view>
+
+<!-- 3. 给自定义组件传递数据/样式 样式命名不能使用驼峰方法，只能小写或者加-、_-->
+<my-proper title='哈哈哈' content="我是内容" titleclass="red" />
+<my-proper title='嘿嘿嘿' content="我是内容" titleclass="blue" />
+<my-proper title='呵呵呵' content="我是内容" titleclass="yellow" />
+<my-proper />
+
+<!-- 4. 自定义组件内部发出事件 -->
+<my-event bind:incremnt="hadleIncrement" />
+<view>当前计数：{{count}}</view>
+
+<!-- 5. tab-control的练习 -->
+<w-tab-control title="{{['衣服', '裤子', '鞋子']}}" bind:itemClick="tabControlClick" />
+
+<!-- 6. 直接选中组件修改数据/调用方法(获取组件对象) -->
+<button size="mini" bind:tap="handleIncrementCpn">修改组件内的数据</button>
+<my-select id="select-id"/>
+
+<!-- 7. 插槽的使用 -->
+        <!-- 7.1 单个插槽的使用 -->
+<my-slot>
+        <button size="mini">我是插入的按钮</button>
+</my-slot>
+
+<my-slot>
+        <text>哈哈哈</text>
+</my-slot>
+
+<my-slot>
+        <image 
+        src="http://s3.mogucdn.com/mlcdn/c45406/170915_0a93207ci28kelh617k4hh62l65lb_640x960.jpg"  
+        mode="aspectFit" />
+</my-slot>
+
+<my-slot>
+        <!-- 滑块的使用 -->
+        <slider value="50"></slider> 
+</my-slot>
+
+        <!-- 7.2 多个插槽的使用 -->
+        <!-- 
+            注意事项：
+                1. 给每个插槽起个名字；name属性
+                2. 必须在component对象中添加一个选项：opthons -> multipleSlots: true
+                
+            PS：    
+                之前版本，不指定具体slot时wxml会把buttom放在my-mslot标签外，所以需要给slot起名字一一对应，新版本不需要了，不管全部slot插入，或者插入2个都会放在my-mslot标签里面，根据写入顺序排序展示。
+
+                建议对slot起名字，因为可以自定义顺序，根据指定slot放入指定的插槽， diy更强
+                
+         -->
+
+<button size="mini" bindtap="handleBtnClick" >切换显示</button>
+<block wx:if="{{isShow}}">
+        <my-mslot>
+                <button size="mini" slot="slot2" >my-mslot按钮</button>
+                <text slot="slot3" >我是my-mslot组件的插槽</text>
+                <image src="http://s3.mogucdn.com/mlcdn/c45406/170915_0a93207ci28kelh617k4hh62l65lb_640x960.jpg"  
+                        mode="aspectFit" 
+                        slot="slot1" />
+                <slider slot="slot4" value="50"/>
+        </my-mslot>
+</block>
+
+
+<!-- component构造器的主要知识存放在my-mslot的js文件中，展示了具体的所用到的内容，以及页面/组件生命周期函数监听 -->

@@ -1,0 +1,10 @@
+/* components/my-style/my-style.wxss */
+.title{
+  font-size: 32rpx;
+  background: orange;
+  font-weight: 700;
+}
+.content{
+  font-size: 32rpx;
+  background: red;
+}

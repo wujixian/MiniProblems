@@ -1,0 +1,21 @@
+/* components/w-tab-control/w-tab-control.wxss */
+.tab-control{
+  display: flex;
+  height: 88rpx;
+  line-height: 88rpx;
+  /* background-color: violet; */
+}
+.tab-item{
+  flex: 1;
+  text-align: center;
+}
+
+.active{
+  color: red;
+  /* border-bottom: 6rpx solid red; */
+}
+/* 不需应用 直接生效：类名，标签 */
+.active text{
+  padding: 20rpx 16rpx;
+  border-bottom: 10rpx solid red;
+}

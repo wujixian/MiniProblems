@@ -1,0 +1,3 @@
+<!--components/my-proper/my-proper.wxml-->
+<view class="title titleclass">{{title}}</view>
+<view class="content">{{content}}</view>

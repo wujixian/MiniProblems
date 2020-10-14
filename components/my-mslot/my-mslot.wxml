@@ -1,0 +1,9 @@
+<!--components/my-mslot/my-mslot.wxml-->
+<view>--------------------------</view>
+<view>我是my-mlot组件的头部</view>
+<!-- 为了区分具体的插槽，所以采用view包裹一下 -->
+<view class="slot1"><slot name="slot1" /></view>
+<view class="slot2"><slot name="slot2" /></view>
+<view class="slot3"><slot name="slot3" /></view>
+<view class="slot4"><slot name="slot4" /></view>
+<view>我是my-mlot组件的尾部</view>

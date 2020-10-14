@@ -1,0 +1,11 @@
+<!-- 创建自定义组件 -->
+<!-- 
+  自定义组件的规则
+    1. 命名方式： 小写 - _   不能以wx-开头
+    2. 自定义组件可以引入其他自定义组件，方式与页面引入自定义组件相同（usingComponent：true）
+    3. 如果在app.json声明的自定义组件，可以在所有page里使用
+
+-->
+<view class="title">我是标题</view>
+<view class="content">我是内容</view>
+<cpn1 />

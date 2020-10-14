@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "my-cpn":"/components/my-cpn/my-cpn",
+    "my-style": "/components/my-style/my-style",
+    "my-proper": "/components/my-proper/my-proper",
+    "my-event": "/components/my-event/my-event",
+    "w-tab-control": "/components/w-tab-control/w-tab-control",
+    "my-select": "/components/my-select/my-select",
+    "my-slot": "/components/my-slot/my-slot",
+    "my-mslot": "/components/my-mslot/my-mslot"
+  },
+  "navigationBarTitleText": "component test"
+}

@@ -1,0 +1,11 @@
+/* components/my-proper/my-proper.wxss */
+.title{
+  font-size: 32rpx;
+  /* background: orange; */
+  /* color: red; */
+  font-weight: 700;
+}
+.content{
+  font-size: 32rpx;
+  /* background: red; */
+}

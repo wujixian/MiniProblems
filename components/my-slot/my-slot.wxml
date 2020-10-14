@@ -1,0 +1,5 @@
+<!--components/my-slot/my-slot.wxml-->
+<view>---------------</view>
+<view>我是组件的头部</view>
+<slot />
+<view>我是组件的尾部</view>

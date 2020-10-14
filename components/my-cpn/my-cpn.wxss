@@ -1,0 +1,9 @@
+/* components/my-cpn/my-cpn.wxss */
+.tilte{
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.content{
+  font-size: 30rpx;
+
+}
