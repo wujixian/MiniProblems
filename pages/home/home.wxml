@@ -1,0 +1,4 @@
+<!--pages/home/home.wxml-->
+<view class="view1">hello world!</view>
+<view class="view1" >promise</view>
+<view class="view1" >回调地狱</view>
