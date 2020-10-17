@@ -1,2 +1,25 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<!-- 
+  1. toast的loading和loading的区别在于，
+      toast loading会根据duration的时间到期而消失
+      loading的消失需要手动调用wx.hideLoading
+
+  2. 分享的两种方式
+      1）三个点分享
+      2）button按钮的open-type属性值设置share
+      ps：主要是实现js中的onShareAppMessage函数内容
+-->
+<!-- 1. toast -->
+<button size="mini" bind:tap="handleShowToast">showToast</button>
+
+<!-- 2. model -->
+<button size="mini" bind:tap="handleShowModal">showModal</button>
+
+<!-- 3. loading -->
+<button size="mini" bind:tap="handleShowLoading">ShowLoading</button>
+
+<!-- 4. acthonsheet -->
+<button size="mini" bind:tap="handleShowActionSheet">ShowActionSheet</button>
+
+<!-- 5. 分享按钮 -->
+<button size="mini" open-type="share">分享</button>
