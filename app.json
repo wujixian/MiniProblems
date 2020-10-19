@@ -2,7 +2,9 @@
   "pages": [
     "pages/home/home",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/detail/detail",
+    "pages/comment/comment"
 
   ],
   "window": {
@@ -11,6 +13,19 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
+
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "索引页"
+    }
+  ]
+  },
+
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

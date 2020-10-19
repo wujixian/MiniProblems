@@ -1,2 +1,45 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+
+
+<!-- 1. navigator页面跳转 -->
+<navigator url="/pages/detail/detail"> 跳到详情页</navigator>
+
+
+<!-- 2. navigator属性： open-type -->
+    <!-- 2.1 redirect 把页面覆盖在原来的页面上 -->
+<navigator url="/pages/detail/detail"
+           open-type="redirect" > 
+  跳到详情页(redirect)
+</navigator>
+
+    <!-- 2.2 switchTab 连同tab也会跳动 -->
+<navigator url="/pages/index/index"
+           open-type="switchTab" > 
+  跳到索引页(switchTab)
+</navigator>
+
+
+    <!-- 2.3 reLaunch 把打开的所有页面都关掉，只加载指定页 -->
+    <navigator url="/pages/detail/detail"
+           open-type="reLaunch" > 
+  跳到详情页(reLaunch)
+</navigator>
+
+
+
+<!-- 3. 跳转过程中数据传递 -->
+  <!-- 3.1 首页往下属页传递数据的方式 -->
+<navigator url="/pages/detail/detail?name=hero&age=18&height=1.70"> 跳到详情页</navigator>
+
+
+  <!-- 
+      3.2 下属页往首页传递数据的方式
+        主要通过unload函数获取主页对象，从而使用主页对象修改主页数据
+  
+  -->
+  <view>{{title}}</view>
+
+
+
+<!-- 4. 通过代码进行页面跳转 -->
+<button size="mini" bind:tap="handlePushDetail">跳转详情页面</button>

@@ -1,11 +1,10 @@
-// pages/home/home.js
+// pages/comment/comment.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title: '哈哈哈'
 
   },
 
@@ -62,19 +61,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
-
-  },
-  handlePushDetail(){
-
-    // 针对不同的导航方式  wx提供了不同的返回函数
-    wx.navigateTo({
-      url: '/pages/detail/detail?tilte=你好&',
-    })
-
-    // wx.redirectTo({
-    //   url: 'url',
-    // })
 
   }
 })
